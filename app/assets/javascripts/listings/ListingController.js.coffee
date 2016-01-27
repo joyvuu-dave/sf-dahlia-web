@@ -57,6 +57,16 @@ ListingController = ($scope, $state, $sce, SharedService, ListingService) ->
   $scope.hasEligibilityFilters = ->
     ListingService.hasEligibilityFilters()
 
+  $scope.householdSize = ->
+    ListingService.eligibility_filters['household_size']
+
+  $scope.incomeTimeframe = ->
+    timeframe = ListingService.eligibility_filters['income_timeframe']
+    timeframe.split('_')[1]
+
+  $scope.incomeTotal = ->
+    ListingService.eligibility_filters['income_total']
+
   $scope.listingApplicationClosed = (listing) ->
     today = new Date
     appDueDate = new Date(listing.Application_Due_Date)

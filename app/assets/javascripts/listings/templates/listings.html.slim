@@ -14,10 +14,12 @@ section.results-bar.bg-mist.padding-top
     .medium-12.columns
       p
         | Showing Matches for
-        strong 3 people
-        | and
-        strong $2400/month
+        strong &nbsp{{ householdSize() }} people*
+        | &nbspand
+        strong &nbsp${{ incomeTotal() }}/{{ incomeTimeframe() }}
         a.button.attention.tiny ui-sref="dahlia.eligibility-estimator" Edit Eligibility
+        p.sub-text.t-micro.c-charcoal * Occupancy shown does not include children under 6.
+
 
 
 section.row ng-if="!openListings.length"
